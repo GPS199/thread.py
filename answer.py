@@ -14,8 +14,12 @@ print(os.getpid())
 print(os.getloadavg())
 
 #3
+load_avg=os.getloadavg()
+print("cpu count: ",os.cpu_count())
 load_avg = os.getloadavg()
-print(load_avg[1])
+print("load_avg: "load_avg[1])
+if(os.cpu_count()-load_avg[1]<1):
+    sys.exit()
 
 #4
 arr = ['https://api.github.com', 'http://bilgisayar.mu.edu.tr/',
